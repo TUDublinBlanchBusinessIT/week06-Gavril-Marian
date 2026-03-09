@@ -30,7 +30,7 @@ Session::forget('cart');
 return Response::json(['success'=>true],200);
 }
 
-    public function displayGrid(Request $request)
+public function displayGrid(Request $request)
 {
 $products=\App\Models\Product::all();
 echo "got products";
