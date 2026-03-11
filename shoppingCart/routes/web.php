@@ -29,3 +29,10 @@ Route::resource('orderdetails', App\Http\Controllers\orderdetailController::clas
 Route::get('product/displaygrid','App\Http\Controllers\productController@displaygrid')->name('products.displaygrid');
 
 Route::get('product/additem/{id}','App\Http\Controllers\productController@additem')->name('products.additem');
+<<<<<<< HEAD
+=======
+
+Route::get('product/emptycart','App\Http\Controllers\productController@emptycart')->name('product.emptycart');
+Route::get('scorder/checkout','App\Http\Controllers\scorderController@checkout')->name('scorder.checkout');
+Route::post('scorder/placeorder','App\Http\Controllers\scorderController@placeorder')->name('scorder.placeorder');
+>>>>>>> d0d26a0c3fb3c60d5bcac3d6a39a6ed3b602e49b
