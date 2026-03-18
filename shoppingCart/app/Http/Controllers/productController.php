@@ -21,27 +21,27 @@ class productController extends AppBaseController
         $this->productRepository = $productRepo;
     }
 
-    public function displayGrid(Request $request)
+   public function displayGrid(Request $request)
 {
-    $products=\App\Models\Product::all();
-echo "got products";
-if ($request->session()->has('cart')) {
-$cart = $request->session()->get('cart');
-print_r($cart);
-$totalQty=0;
-foreach ($cart as $product => $qty) {
-$totalQty = $totalQty + $qty;
-}
-$totalItems=$totalQty;
-}
-else {
-$totalItems=0;
-echo "no cart";
-}
-return view('products.displaygrid')
-    ->with('products', $products)
-    ->with('totalItems', $totalItems);
+    $products = \App\Models\Product::all();
 
+    if ($request->session()->has('cart')) {
+        $cart = $request->session()->get('cart');
+
+        $totalQty = 0;
+
+        foreach ($cart as $product => $qty) {
+            $totalQty = $totalQty + $qty;
+        }
+
+        $totalItems = $totalQty;
+    } else {
+        $totalItems = 0;
+    }
+
+    return view('products.displaygrid')
+        ->with('products', $products)
+        ->with('totalItems', $totalItems);
 }
 
     
