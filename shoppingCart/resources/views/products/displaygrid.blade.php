@@ -6,7 +6,7 @@
 dark bg-dark">
     <ul class="navbar-nav ms-auto">
         <li class="nav-item"><button id="checkOut"
-onclick="window.location.href=''" type="button" style="margin-
+onclick="window.location.href='{{ route('scorders.checkout') }}'" type="button" style="margin-
 right:5px;" class="btn btn-primary navbar-btn center-
 block">Check Out</button></li>
         <li class="nav-item"><button id="emptycart"

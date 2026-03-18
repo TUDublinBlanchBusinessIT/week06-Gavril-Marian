@@ -38,7 +38,7 @@ $lineitems);
 }
 else {
 Flash::error("There are no items in your cart");
-return redirect(route('product.displaygrid'));
+return redirect(route('products.displaygrid'));
 }
 }
 
@@ -70,7 +70,8 @@ return redirect(route('product.displaygrid'));
     public function placeorder(Request $request)
 {
 $thisOrder = new \App\Models\Scorder();
-$thisOrder->orderdate = (new \DateTime())->format("Y-m-d H:i:s");
+$thisOrder->orderdate = (new \DateTime())->format("Y-m-d
+H:i:s");
 $thisOrder->save();
 $orderID = $thisOrder->id;
 $productids = $request->productid;
